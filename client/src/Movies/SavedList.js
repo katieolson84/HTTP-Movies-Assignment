@@ -1,7 +1,8 @@
 import React from 'react';
-import { NavLink, Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 function SavedList({ list }) {
+  
   return (
     <div className="saved-list">
       <h3>Saved Movies:</h3>
@@ -16,9 +17,7 @@ function SavedList({ list }) {
           </NavLink>
         );
       })}
-      <div className="home-button">
-        <Link to="/">Home</Link>
-      </div>
+    
     </div>
   );
 }
