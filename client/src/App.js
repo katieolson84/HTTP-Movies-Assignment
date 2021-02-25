@@ -6,7 +6,7 @@ import axios from 'axios';
 import SavedList from "./Movies/SavedList";
 import MovieList from "./Movies/MovieList";
 import Movie from "./Movies/Movie";
-import UpdateMovie from "./Movies/UpdateMovie";
+import UpdateForm from "./Movies/UpdateForm";
 import AddMovie from "./Movies/AddMovie";
 
 const App = () => {
@@ -32,9 +32,9 @@ const App = () => {
   }
 
 // Show the movie list on the screen
-  useEffect(() => {
+  useEffect((movieList) => {
     getMovieList();
-  }, []);
+  }, [movieList]);
 
   return (
     <>
@@ -51,7 +51,7 @@ const App = () => {
       {/* Routes */}
       <Switch>
         <Route path="/update-movie/:id" render={(props) => {
-          return (<UpdateMovie {...props} setMovieList={setMovieList} movieList=
+          return (<UpdateForm {...props} setMovieList={setMovieList} movieList=
             {movieList} />);
         }} />
         <Route path="/movies/:id">
