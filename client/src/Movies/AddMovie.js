@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 
 const initialMovie = {
+    id: "",
     title: "",
     director: "",
     metascore: "",
@@ -28,6 +29,7 @@ const AddMovie = () => {
         .post('http://localhost:5000/api/movies/', newMovie)
         .then((res) => 
             console.log(res))
+
         .catch(err =>
             console.log(err));
         setFormValues(initialMovie);
@@ -40,28 +42,28 @@ const AddMovie = () => {
                <input 
                 type="text"
                 name="title"
-                onChnage={handleChange}
+                onChange={handleChange}
                 placeholder="Title"
                 value={formValues.title}
                />
                <input 
                 type="text"
                 name="director"
-                onChnage={handleChange}
+                onChange={handleChange}
                 placeholder="Director"
                 value={formValues.director}
                />
                <input 
                 type="number"
                 name="metascore"
-                onChnage={handleChange}
+                onChange={handleChange}
                 placeholder="Metascore"
                 value={formValues.metascore}
                />
                <input 
-                type="array"
+                type="text"
                 name="stars"
-                onChnage={handleChange}
+                onChange={handleChange}
                 placeholder="Stars"
                 value={formValues.stars}
                />
