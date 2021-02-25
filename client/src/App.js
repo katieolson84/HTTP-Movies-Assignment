@@ -51,7 +51,8 @@ const App = () => {
       {/* Routes */}
       <Switch>
         <Route path="/update-movie/:id" render={(props) => {
-          return (<UpdateMovie {...props} setMovie={setMovieList} />);
+          return (<UpdateMovie {...props} setMovieList={setMovieList} movieList=
+            {movieList} />);
         }} />
         <Route path="/movies/:id">
           <Movie 

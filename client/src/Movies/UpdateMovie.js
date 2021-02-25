@@ -98,10 +98,10 @@ const UpdateForm = ({ movieList, setMovieList }) => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/api/movies/${id}`)
+      .get(`http://localhost:5000/api/movies/${id}`) // eslint-disable-next-line
       .then((res) => setFormValues(res.data))
       .catch((err) => console.log(err));
-  }, []);
+  }, []); 
 
   const handleChange = (e) => {
     setFormValues({ ...formValues, [e.target.name]: e.target.value });
@@ -113,7 +113,7 @@ const UpdateForm = ({ movieList, setMovieList }) => {
       .put(`http://localhost:5000/api/movies/${id}`, formValues)
       .then((res) => {
         setMovieList([...movieList, res.data]);
-        push("/");
+        push(`/movies/${id}`);
       })
       .catch((err) => console.log(err));
   };
