@@ -5,7 +5,7 @@ import { useParams, useHistory } from "react-router-dom";
 // Components
 import MovieCard from "./MovieCard";
 
-function Movie({ addToSavedList, removeFromSavedList, updateMovieList }) {
+function Movie({ addToSavedList, removeFromSavedList }) {
   const [movie, setMovie] = useState(null);
   const params = useParams();
   const {push} = useHistory();
@@ -51,16 +51,16 @@ function Movie({ addToSavedList, removeFromSavedList, updateMovieList }) {
       <MovieCard movie={movie} />
 
       <div className="save button" onClick={saveMovie}>
-        Save
+        ❤️
       </div>
       <div className="remove button" onClick={unsaveMovie}>
-        Remove From Saved List
+        🤍
       </div>
       <div className="update button" onClick={updateMovie}>
-        Update
+        ✎
       </div>
       <div className="delete button" onClick={deleteMovie}>
-        Delete
+       🆇 
       </div>
     </div>
   );
