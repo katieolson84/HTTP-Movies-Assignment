@@ -11,7 +11,7 @@ const UpdateForm = ({ movieList, setMovieList }) => {
     axios
       .get(`http://localhost:5000/api/movies/${id}`) // eslint-disable-next-line
       .then((res) => setFormValues(res.data))
-      .catch((err) => console.log(err));
+      .catch((err) => console.log(err)); // eslint-disable-next-line
   }, []); 
 
   const handleChange = (e) => {
@@ -34,7 +34,7 @@ const UpdateForm = ({ movieList, setMovieList }) => {
       {!formValues ? (
         "Loading..."
       ) : (
-        <form onSubmit={handleSubmit}>
+        <form className="update-form" onSubmit={handleSubmit}>
           <input
             type="text"
             name="title"

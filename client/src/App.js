@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Route, NavLink, Switch } from "react-router-dom";
+import { Route, Link, Switch } from "react-router-dom";
 import axios from 'axios';
 
 // Components
@@ -38,15 +38,20 @@ const App = () => {
 
   return (
     <>
-      <nav>
-        <h1 className="title">Movie List</h1>
-        <div className="nav-links">
-          <NavLink exact to="/">
+    <div className="App">
+        <div className="home-link">
+          <Link className="title" exact to="/">
+            My Movie Collection
+          </Link>
+          <Link className="home" exact to="/">
             Home
-          </NavLink>
+          </Link>
         </div>
-      </nav>
-      <SavedList list={savedList} />
+        <div className="favorites">
+          <SavedList list={savedList} />
+        </div>
+    </div>
+
 
       {/* Routes */}
       <Switch>
@@ -61,14 +66,13 @@ const App = () => {
           updatedMovieList={getMovieList}
           />
         </Route>
-        {/* <Route path= "/add-movie">
-          <AddMovie />
-        </Route> */}
+  
         <Route exact path="/">
           <AddMovie />
           <MovieList movies={movieList} />
         </Route>
       </Switch>
+    
     </>
   );
 };
