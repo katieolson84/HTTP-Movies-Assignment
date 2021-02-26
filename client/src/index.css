@@ -58,6 +58,7 @@ body {
   margin: 1rem auto;
   border-radius: 2px;
   color: #3f203d;
+  height: 43vh;
 }
 
 .movie-director {
@@ -205,5 +206,4 @@ ul {
 
 .add-container form {
   display: flex;
-  pa
 }
