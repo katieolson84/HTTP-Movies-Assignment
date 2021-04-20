@@ -1,39 +1,101 @@
-body {
+* {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
-  background-color: #f2f2f2;
+  box-sizing: border-box;
+}
+body {
+  background-image: url(./design/cinema.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  color: #333;
 }
 
+.home-link {
+  overflow: hidden;
+  background-color: #333;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  opacity: 0.95;
+}
+
+.home,
+.title {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 1.4rem;
+}
+
+.home:hover {
+  background: #ddd;
+  color: black;
+}
+.home {
+  margin-left: 15%;
+  text-align: right;
+}
+.title {
+  color: rgba(241, 163, 209, 0.938);
+}
+
+.favorites {
+  margin-top: 70px;
+}
 .movie-card {
   background-color: #fff;
   border: 0;
-  box-shadow: 0 -1px 0 #e0e0e0, 0 0 2px rgba(0, 0, 0, 0.12),
-    0 2px 4px rgba(0, 0, 0, 0.24);
-  padding: 1rem;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px,
+    rgba(0, 0, 0, 0.05) 0px 5px 10px;
+  padding: 1.2rem;
   cursor: pointer;
   position: relative;
   margin: 1rem auto;
+  border-radius: 2px;
+  color: #3f203d;
+  height: 43vh;
 }
 
 .movie-director {
-  padding: 4px 0;
+  padding-left: 0.5rem;
+  padding-top: 0.5rem;
   font-size: 0.8rem;
 }
 
+.movie-metascore {
+  padding-left: 0.5rem;
+
+  font-size: 0.8rem;
+}
+
+.movie-actor {
+  padding-left: 0.5rem;
+  padding-top: 0.5rem;
+}
+
+.star-list {
+  list-style-type: " ★ ";
+}
+
 .saved-list {
-  background-color: #fff;
-  border: 0;
-  box-shadow: 0 -1px 0 #e0e0e0, 0 0 2px rgba(0, 0, 0, 0.12),
-    0 2px 4px rgba(0, 0, 0, 0.24);
-  padding: 1rem;
+  background-color: rgb(248, 245, 245);
+  padding: 2%;
+  border: none;
+  border-radius: 2px;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px,
+    rgba(0, 0, 0, 0.05) 0px 5px 10px;
   cursor: pointer;
-  position: relative;
   margin: 1rem auto;
   width: 75%;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  /* align-items: center; */
+  /* justify-content: center; */
+  flex-direction: column;
 }
 
 .saved-list h3 {
@@ -42,10 +104,21 @@ body {
 
 .saved-movie {
   margin: 0 10px;
+  color: #d8739a;
+}
+a {
+  text-decoration: none;
+}
+ul {
+  list-style-type: " ❤️ ";
+  list-style-position: outside;
+  margin: 13px;
+  width: 80%;
+  margin-left: 40px;
 }
 .saved-active {
-  color: blue;
-  border: 1px solid grey;
+  color: #d8739a;
+  /* border: 1px solid grey; */
   padding: 5px;
 }
 .save-wrapper {
@@ -54,45 +127,83 @@ body {
   margin: 1rem auto;
 }
 .button {
-  border: 1px solid grey;
+  border: none;
+  border-radius: 2px;
   padding: 5px 10px;
-  background-color: lightseagreen;
+  background-color: #fddfea;
   cursor: pointer;
+  width: 100px;
+  text-align: center;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px,
+    rgba(0, 0, 0, 0.05) 0px 5px 10px;
+  color: rgb(243, 247, 243);
 }
 .save {
   position: absolute;
-  top: 25px;
-  right: 200px;
+  top: 45vh;
+  right: 50%;
+  width: 40px;
+  height: 40px;
 }
 .update {
   position: absolute;
-  top: 25px;
-  right: 120px;
-}
-
-.remove {
-  position: absolute;
-  top: 200px;
-  right: 45px;
-  background-color: rgb(204, 21, 158);
+  top: 45vh;
+  right: 18%;
+  width: 40px;
+  height: 40px;
+  align-self: center;
+  font-size: 1.5rem;
+  color: #39253c;
 }
 
 .delete {
   position: absolute;
-  top: 25px;
-  right: 45px;
-}
-.button:hover {
-  background-color: rgb(243, 247, 243);
-  color: lightseagreen;
+  top: 45vh;
+  right: 2%;
+  width: 40px;
+  height: 40px;
+  align-self: center;
+  font-size: 1.3rem;
+  color: #39253c;
 }
 
-.home-button {
-  padding: 5px 10px;
-  background-color: lightskyblue;
+.remove {
+  position: absolute;
+  top: 45vh;
+  right: 34%;
+  width: 40px;
+  height: 40px;
+  align-self: center;
+  font-size: 1.3rem;
+  color: #39253c;
+}
+
+.button:hover {
+  background-color: rgb(243, 247, 243);
+  color: #d8739a;
 }
 
 .movie-warning {
   color: red;
   text-align: center;
+}
+
+.add-container {
+  background-color: #3f203d;
+  border: 0;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px,
+    rgba(0, 0, 0, 0.05) 0px 5px 10px;
+  padding: 1.2rem;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  margin: 1rem auto;
+  border-radius: 2px;
+  color: #fff;
+  width: 90%;
+  text-align: center;
+}
+
+.add-container form {
+  display: flex;
 }
